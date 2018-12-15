@@ -1,8 +1,8 @@
 # instructions
 ### what
 Stupid simple k8s node  
-Single node deployment  (VM or local laptop)
-Useful for labs, demos, or single base-system for more complex k8s based appliances
+Single node deployment  (VM or local laptop)  
+Useful for labs, demos, or single base-system for more complex k8s based appliances  
 
 ### why
 Challenges in how quickly to stand up a minimal functional kubernetes endpoint  
@@ -12,7 +12,10 @@ Differences in;
 - associated configuration files and services
 
 ### how
-leverage repeatable build processes to construct
+leverage repeatable build processes to construct  
+minimal viable bootstrap / dialtone  
+uses Linux snaps:  
+https://snapcraft.io
 
 ### TL;DR
 The following `snapd` instructions have been tested on Centos.  
