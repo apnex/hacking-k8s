@@ -1,0 +1,61 @@
+{
+	"spec": {
+		"name": "k8s-02",
+		"guest_OS": "CENTOS_7_64",
+		"placement": {
+			"folder": "group-v3",
+			"host": "host-133",
+			"datastore": "datastore-134"
+		},
+		"cpu": {
+			"count": 2,
+			"cores_per_socket": 2
+		},
+		"memory": {
+			"size_MiB": 2048
+		},
+		"boot": {
+			"type": "BIOS"
+		},
+		"boot_devices": [
+			{
+				"type": "DISK"
+			},
+			{
+				"type": "CDROM"
+			},
+			{
+				"type": "ETHERNET"
+			}
+		],
+		"cdroms": [
+			{
+				"start_connected": true,
+				"backing": {
+					"iso_file": "[datastore1] iso/centos.iso",
+					"type": "ISO_FILE"
+				}
+			}
+		],
+		"disks": [
+			{
+				"new_vmdk": {
+					"capacity": 8589934592
+				},
+				"type": "SCSI"
+			}
+		],
+		"nics": [
+			{
+				"start_connected": true,
+				"mac_type": "GENERATED",
+				"type": "VMXNET3",
+				"upt_compatibility_enabled": true,
+				"backing": {
+					"type": "DISTRIBUTED_PORTGROUP",
+					"network": "dvportgroup-24"
+				}
+			}
+		]
+	}
+}
