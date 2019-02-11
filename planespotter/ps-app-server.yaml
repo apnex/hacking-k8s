@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
@@ -24,11 +25,11 @@ spec:
         - containerPort: 80
         volumeMounts:
         - name: config-volume
-          mountPath: /app/config
+          mountPath: "/app/config"
       volumes:
-        - name: config-volume
-          configMap:
-            name: planespotter-app-cfg
+      - name: config-volume
+        configMap:
+          name: planespotter-app-cfg
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -54,8 +55,6 @@ metadata:
     app: planespotter-svc
 spec:
   ports:
-    # the port that this service should serve on
-    - port: 80
+  - port: 80
   selector:
     app: planespotter-app
-
